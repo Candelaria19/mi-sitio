@@ -1,0 +1,147 @@
+
+/* siempre arriba del body va el link de las fuentes que use */
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* variable de colores, para poder cambiar mas facil el color*/
+:root{
+    --gris:rgb(228, 228, 224);
+}
+body{
+    font-family: "Lato", sans-serif;
+}
+
+h1, h2{
+    font-family: "Gravitas One", serif;
+}
+
+header{
+    text-align: center;
+    background-color: var(--gris);
+    padding: 1em;
+}
+
+a{
+    transition: 0.3s;
+}
+
+nav a{
+    color: black;
+    font-weight: bold;
+    margin: 0 0.5em;
+    font-size: 1.1em;
+}
+
+nav a:hover{
+    color: rgb(116, 116, 116);
+}
+
+header img{
+    width: 50px;
+}
+
+.contenedor{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h1{
+    text-align: center;
+    margin: 1em 0;
+}
+
+#informacion article{
+    padding: 2em;
+    border-radius: 10px;
+    background-color: var(--gris);
+    margin-bottom: 1.2em;
+    box-shadow: 12px 9px 13px 1px rgba(0, 0, 0, 0.151);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* para que el boton no mida todo el articulo sino que arranque en el mismo lugar */
+    align-items: flex-start;
+}
+
+#informacion h2{
+    color: rgb(0, 0, 0);
+
+}
+
+#informacion p{
+
+    /* para que los renglones se separen, darles aire a los p, un interlineado. Por lo general te viene 1.2em */
+    line-height: 1.5em;
+}
+
+#informacion a{
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#informacion a:hover{
+    color: black;
+    background-color: white;
+}
+
+@media all and (min-width:768px) {
+    
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size:1.1em;
+    }
+
+    h1{
+        font-size: 3em;
+    }
+
+    #informacion {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2em;
+        /* /* para que las cajas no queden pegadas 
+        justify-content: space-between; */
+    }
+
+    /* /* esto para que entren 2 articulos juntos 
+    #informacion article{
+        width: 49%;
+    } */
+
+    #informacion article{
+
+        /* para que se agrande 1 */
+        flex-grow: 1;
+
+        /* para que no se achique le ponemos 0 */
+        flex-shrink: 0;
+        /* lo minimo que van a tener las cajas es 300px entonces yo lo que quiero es que se agrande */
+        flex-basis: 300px;
+    }
+}
+
+/* tamaño para computadora de escrito */
+@media all and (min-width:1200px) {
+    #informacion article{
+        /* entonces como achique el ancho minimo de los articulos me entran mas cajas y el articulo 5 y 6 como son dos se ajustan a los tamaños de arriba*/
+        flex-basis: 240px;
+    }
+
+    /* esto para que entren 3 o mas articulos juntos 
+    #informacion article{
+        width: 30%;
+    } */
+    
+}
